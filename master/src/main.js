@@ -24,13 +24,13 @@ Vue.use(Dialog)
 // 1.如果子应用使用hash模式,activeRule需要写上完整url,比如:/#/a/b
 // 2.entry写成子应用根目录就行了
 // 3.activeRule支持数组,对应子应用的多个路由
-// 显示出来,主/子应用路由应该一致,即entry和activeRule一致
+// 4.经过测试,主/子应用如果路由一致,可以activeRule: ""(目前测试中发现hash下必须路由一致)
 registerMicroApps([
   {
     name: 'qiankunsubvue',
-    entry: '//localhost:8080/',
+    entry: '//localhost:8080/#/',
     container: '#qiankunContainer',
-    activeRule: ['/#/dashboard/qiajnkunVue', '/#/dashboard/qiajnkunVue2']
+    activeRule: ''
   }
 ])
 
@@ -56,3 +56,7 @@ window.Vue = undefined
 // 7.写好说明文档
 // 8.entry是否可以为./的形式
 // 9.webpack解决跨域问题
+// 10.不要history,hash混用,主/子应用要用同一种路由模式
+// 11.权限测试
+
+// TODO:系统bug:1.menu hidden有问题,2.语言有问题

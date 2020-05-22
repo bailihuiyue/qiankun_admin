@@ -25,25 +25,25 @@ export const constantRouterMap = [
     name: 'index',
     component: BasicLayout,
     meta: { title: 'menu.index' },
-    redirect: '/dashboard/qiajnkunVue',
+    redirect: '/sub-vue/p1',
     children: [
       // dashboard
       {
-        path: 'dashboard',
-        name: 'dashboard',
-        redirect: '/dashboard/qiajnkunVue',
+        path: 'sub-vue',
+        name: 'sub-vue',
+        redirect: '/sub-vue/p1',
         component: RouteView,
-        meta: { title: 'menu.dashboard', keepAlive: true, icon: bxAnaalyse, roles: ['admin'] },
+        meta: { title: 'menu.vue', keepAlive: true, icon: bxAnaalyse, roles: ['admin'] },
         children: [
           {
-            path: 'qiajnkunVue',
-            name: 'QiajnkunVue',
-            meta: { title: 'menu.analysis', keepAlive: false, roles: ['admin'] }
+            path: 'p1',
+            name: 'p1',
+            meta: { title: 'menu.p1', keepAlive: false, roles: ['admin'] }
           },
           {
-            path: 'qiajnkunVue2',
-            name: 'qiajnkunVue2',
-            meta: { title: 'menu.testFun', keepAlive: true, roles: ['admin'] }
+            path: 'p2',
+            name: 'p2',
+            meta: { title: 'menu.p2', keepAlive: true, roles: ['admin'] }
           }
         ]
       },

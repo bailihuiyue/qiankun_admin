@@ -2,10 +2,11 @@ export default {
   menu: {
     index: '首页',
     dashboard: '仪表盘',
-    analysis: '分析页',
-    monitor: '监控页（外部）',
+    p1: '第一页',
+    p2: '第二页',
     testFun: '测试功能',
-    test: 'Test'
+    test: 'Test',
+    vue: 'vue子应用'
   },
   login: {
     login: '登录',

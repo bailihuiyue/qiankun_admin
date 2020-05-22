@@ -48,7 +48,10 @@
       >
         <multi-tab v-if="multiTab"></multi-tab>
         <transition name="page-transition">
-          <div id="qiankunContainer"></div>
+          <div>
+            <router-view></router-view>
+            <div id="qiankunContainer"></div>
+          </div>
         </transition>
       </a-layout-content>
 
