@@ -24,13 +24,21 @@ Vue.use(Dialog)
 // 1.如果子应用使用hash模式,activeRule需要写上完整url,比如:/#/a/b
 // 2.entry写成子应用根目录就行了
 // 3.activeRule支持数组,对应子应用的多个路由
-// 4.经过测试,主/子应用如果路由一致,可以activeRule: ""(目前测试中发现hash下必须路由一致)
+// 4.经过测试,只有一子应用,如果主/子应用如果路由一致,可以activeRule: ""(目前测试中发现hash下必须路由一致)
+// 5.activeRule可以写成数组,作为子应用app的多入口
 registerMicroApps([
   {
     name: 'qiankunsubvue',
-    entry: '//localhost:8080/#/',
+    entry: '//localhost:8080/',
     container: '#qiankunContainer',
-    activeRule: ''
+    activeRule: ['/#/sub-vue/p1', '/#/sub-vue/p2']
+  },
+  // },
+  {
+    name: 'qiankunsubreact',
+    entry: '//localhost:3000/',
+    container: '#qiankunContainer',
+    activeRule: ['/#/sub-react/p3', '/#/sub-react/p4']
   }
 ])
 
@@ -51,12 +59,12 @@ window.Vue = undefined
 // ~~2.子应用懒加载~~
 // ~~3.同一个子应用的多个入口~~
 // 4.普通html页面如何接入
-// 5.引入图片的路径
+// ~~5.引入图片的路径:把webpack的publicPath规定成绝对路径就行了~~
 // 6.整理出Vue demo, React Demo, Jq Demo
 // 7.写好说明文档
 // 8.entry是否可以为./的形式
 // 9.webpack解决跨域问题
 // 10.不要history,hash混用,主/子应用要用同一种路由模式
 // 11.权限测试
-
-// TODO:系统bug:1.menu hidden有问题,2.语言有问题
+// 12.react 懒加载报找不到chunk.js,所以在webpack中把改成 publicPath = isEnvProduction ? paths.servedPath : isEnvDevelopment && '//localhost:3000/'; 文件位置搜索:TODO:为了微前端而把端口写死3000即可
+// 13.react目前路由切换不了

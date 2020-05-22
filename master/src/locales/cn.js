@@ -6,7 +6,8 @@ export default {
     p2: '第二页',
     testFun: '测试功能',
     test: 'Test',
-    vue: 'vue子应用'
+    vue: 'vue子应用',
+    react: 'react子应用'
   },
   login: {
     login: '登录',
