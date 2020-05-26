@@ -3,7 +3,7 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
 import Vue from 'vue'
-import { registerMicroApps, start } from 'qiankun'
+import { registerMicroApps, start, setDefaultMountApp } from 'qiankun'
 import App from './App.vue'
 import router from './router'
 import store from './store/'
@@ -26,6 +26,7 @@ Vue.use(Dialog)
 // 3.activeRule支持数组,对应子应用的多个路由
 // 4.经过测试,只有一子应用,如果主/子应用如果路由一致,可以activeRule: ""(目前测试中发现hash下必须路由一致)
 // 5.activeRule可以写成数组,作为子应用app的多入口
+// 6.经测试,react项目使用react-router v5, hash模式下点击左侧菜单子应用页面不跳转(虽然路由有变化),切换到react-router 6.0.0-alpha.5可以了
 registerMicroApps([
   {
     name: 'qiankunsubvue',
@@ -33,14 +34,16 @@ registerMicroApps([
     container: '#qiankunContainer',
     activeRule: ['/#/sub-vue/p1', '/#/sub-vue/p2']
   },
-  // },
   {
     name: 'qiankunsubreact',
-    entry: '//localhost:3000/',
+    entry: '//localhost:3000',
     container: '#qiankunContainer',
     activeRule: ['/#/sub-react/p3', '/#/sub-react/p4']
   }
 ])
+
+// 目前不管用
+// setDefaultMountApp('/#/sub-vue/p1')
 
 start()
 

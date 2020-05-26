@@ -47,23 +47,22 @@ export const constantRouterMap = [
           }
         ]
       },
-       // sub-vue
+       // sub-react
        {
         path: 'sub-react',
         name: 'sub-react',
         redirect: '/sub-react/p3',
-        component: RouteView,
-        meta: { title: 'menu.react', keepAlive: true, icon: bxAnaalyse, roles: ['admin'] },
+        meta: { title: 'menu.react', icon: bxAnaalyse, roles: ['admin'] },
         children: [
           {
             path: 'p3',
             name: 'p3',
-            meta: { title: 'menu.p1', keepAlive: false, roles: ['admin'] }
+            meta: { title: 'menu.p1', roles: ['admin'] }
           },
           {
             path: 'p4',
             name: 'p4',
-            meta: { title: 'menu.p2', keepAlive: true, roles: ['admin'] }
+            meta: { title: 'menu.p2', roles: ['admin'] }
           }
         ]
       },
