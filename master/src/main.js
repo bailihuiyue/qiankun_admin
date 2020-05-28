@@ -83,6 +83,6 @@ window.Vue = undefined
 // ~~8.entry是否可以为./的形式(不可以,必须是绝对路径)~~
 // ~~9.webpack解决跨域问题~~
 // ~~10.不要history,hash混用,主/子应用要用同一种路由模式~~
-// 11.权限测试
+// ~~11.权限测试~~
 // ~~12.react 懒加载报找不到chunk.js,所以在webpack中把改成 publicPath = isEnvProduction ? paths.servedPath : isEnvDevelopment && '//localhost:3000/'; 文件位置搜索:TODO:为了微前端而把端口写死3000即可~~
 // ~~13.react目前路由切换不了(升级router到6)~~
