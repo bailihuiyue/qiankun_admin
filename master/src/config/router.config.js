@@ -47,8 +47,8 @@ export const constantRouterMap = [
           }
         ]
       },
-       // sub-react
-       {
+      // sub-react
+      {
         path: 'sub-react',
         name: 'sub-react',
         redirect: '/sub-react/p3',
@@ -62,6 +62,25 @@ export const constantRouterMap = [
           {
             path: 'p4',
             name: 'p4',
+            meta: { title: 'menu.p2', roles: ['admin'] }
+          }
+        ]
+      },
+      // sub-jquery
+      {
+        path: 'sub-jquery',
+        name: 'sub-jquery',
+        redirect: '/sub-jquery/p5',
+        meta: { title: 'menu.jquery', icon: bxAnaalyse, roles: ['admin'] },
+        children: [
+          {
+            path: 'p5',
+            name: 'p5',
+            meta: { title: 'menu.p1', roles: ['admin'] }
+          },
+          {
+            path: 'p6',
+            name: 'p6',
             meta: { title: 'menu.p2', roles: ['admin'] }
           }
         ]

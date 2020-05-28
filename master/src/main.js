@@ -27,6 +27,7 @@ Vue.use(Dialog)
 // 4.经过测试,只有一子应用,如果主/子应用如果路由一致,可以activeRule: ""(目前测试中发现hash下必须路由一致)
 // 5.activeRule可以写成数组,作为子应用app的多入口
 // 6.经测试,react项目使用react-router v5, hash模式下点击左侧菜单子应用页面不跳转(虽然路由有变化),切换到react-router 6.0.0-alpha.5可以了
+// 经过测试,传统jq项目想要接入的话每一个页面要建立一个单独的子应用,如下所示qiankunsubjq,和qiankunsubjq2
 registerMicroApps([
   {
     name: 'qiankunsubvue',
@@ -39,6 +40,18 @@ registerMicroApps([
     entry: '//localhost:3000',
     container: '#qiankunContainer',
     activeRule: ['/#/sub-react/p3', '/#/sub-react/p4']
+  },
+  {
+    name: 'qiankunsubjq',
+    entry: '//localhost:5500/index.html',
+    container: '#qiankunContainer',
+    activeRule: '/#/sub-jquery/p5'
+  },
+  {
+    name: 'qiankunsubjq2',
+    entry: '//localhost:5500/index2.html',
+    container: '#qiankunContainer',
+    activeRule: '/#/sub-jquery/p6'
   }
 ])
 
